@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --goldenRod: #EFB225;
+    --midnightBlue: #052C52;
+    --dimGrey: #6F7274;
+    --whiteSmoke: #F1F1F1;
+
+    /* SHADOWS */
+    --shadow0-2: rgba(0, 0, 0, 0.2);
+    --shadowWhite1: rgba(255, 255, 255, 0.90);
+
+    /* BACKGROUND BANNER */
+    --whiteBanner: linear-gradient(to right, white 45%, rgba(255, 255, 255, 0) 65%);
+}
+
+.top {
+    --offset: 50px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+    /* Começa escondido */
+
+    /* Restante do seu estilo */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #efb225;
+    border-radius: 10px;
+}
+
+.top.active {
+    visibility: visible;
+    /* Aparece quando a classe ativa é adicionada */
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+/* WPP BUTTON */
+#robbu-whatsapp-button {
+    z-index: 1;
+}
+
+/* NAV */
+
+.navContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+    background: var(--white);
+    box-shadow: 0 0 10px 0 var(--shadow0-2);
+}
+
+.navLogo {
+    width: 150px;
+}
+
+.navItensContainerDesktop {
+    display: flex;
+    align-items: center;
+}
+
+.navItem, .hideOnMobile, .showOnMobile {
+    font-size: 15px;
+    padding: 13px 14px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    color: var(--midnightBlue);
+    transition: 0.5s ease-out;
+}
+
+#navContactButton {
+    background: var(--goldenRod);
+    border-radius: 5px;
+    color: var(--midnightBlue);
+}
+
+#navContactButton:hover {
+    background-color: var(--midnightBlue);
+    color: var(--goldenRod);
+}
+
+.hideOnMobile, .showOnMobile {
+    border: none;
+    background: none;
+}
+
+.navItem:hover, .hideOnMobile:hover, .socialMidiaIcon:hover, .showOnMobile:hover {
+    color: var(--goldenRod);
+    background-color: var(--midnightBlue);
+    border-radius: 5px;
+    border: none;
+}
+
+.socialMidiaIcon {
+    padding: 11px;
+    color: var(--goldenRod);
+}
+
+.callNavContainer {
+    padding: 1% 25px;
+    background: var(--midnightBlue);
+    margin: 0 0 0 25px;
+}
+
+.callNavNumbers, .callNavText {
+    font-size: 11px;
+    color: var(--goldenRod);
+    display: block;
+    margin: 10px 0;
+}
+
+.callNavText {
+    font-size: 13px;
+}
+
+.callNavText i {
+    margin: 0 5px 0 0;
+}
+
+/* MOBILE */
+
+nav ul {
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.navItensContainerMobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--shadowWhite1);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px var(--shadow0-2);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px;
+}
+
+.navItensContainerMobile li {
+    width: 100%;
+}
+
+.navItensContainerMobile a {
+    text-decoration: none;
+    color: var(--midnightBlue);
+}
+
+.menuCloseButtonMobile {
+    display: none;
+}
+
+/* FORMS */
+
+.formContainer {
+    margin: 20px auto;
+    width: 75%;
+}
+
+.formQuestions {
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.formText {
+    padding: 50px;
+    text-align: center;
+}
+
+.formTextTilte {
+    color: #052c52;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.formTextParagraph {
+    color: #6f7274;
+    line-height: 2;
+}
+
+
+.formField label {
+    font-size: 18px;
+    color: #052c52;
+}
+
+.formField input, .formField textarea {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #052c52;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+.servicosInteresseOptions {
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    display: grid;
+    margin: 15px 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.formCheck {
+    margin: 5px;
+}
+
+.formCheckLabel {
+    margin: 10px;
+}
+
+#mensagem {
+    display: none;
+}
+
+.buttonSubmitForms {
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 13px;
+    background: #efb225;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.g-recaptcha {
+    margin: 10px 0;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.spanRequired { 
+    color: red;
+}
+
+#alertForm {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: flex;
+    padding: 10px 16px;
+}
+
+#alertMessage {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#alertMessageImage {
+    width: 30px;
+}
+
+/* FOOTER */
+
+
+footer {
+    background: #052c52;
+    padding: 25px;
+}
+
+.footer-container {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-content img {
+    width: 250px;
+}
+
+.footer-content p {
+    margin: 10px;
+    width: 50%;
+}
+
+.footer-content1 p {
+    margin: 3px;
+}
+
+.bottom-footer {
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+}
+
+.socialMedias {
+    display: flex;
+    font-size: 30px;
+    gap: 50px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.bottom-footer a, .span-footer, .footer-content1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.span-footer:hover, .footer-content1 a:hover {
+    border-bottom: solid 1px #fff;
+}
+
+.footer-content1 a {
+    margin: 10px;
+}
+
+@media (max-width: 1050px) {
+
+
+    /* NAV */
+
+    .navContainer {
+        justify-content: space-between;
+    }
+
+    .hideOnMobile, .callNavContainer {
+        display: none;
+    }
+
+    .menuCloseButtonMobile {
+        margin-left: 20px;
+    }
+
+    .menuCloseButtonMobile {
+        display: block;
+    }
+
+    /* FORMS */
+    .formQuestions {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@media (max-width:900px) {
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-content p {
+        width: 100%;
+    }
+
+    .footer-content1 {
+        text-align: center;
+        margin: 10px;
+    }
+}

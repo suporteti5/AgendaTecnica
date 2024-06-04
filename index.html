@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Técnica</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="Assets/Logo/logo.ico" type="image/x-icon">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- GOOGLE RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- ICONS BST -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- WPP BUTTON -->
+    <link rel="stylesheet"
+        href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+    <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
+        <div class="rwb-tooltip">🚀 Estamos no WhatsApp</div>
+        <img alt="whatsapp-icon"
+            src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
+
+    <!-- BANNER -->
+    <link rel="preload" href="./Assets/Banners/BannerImageHome.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img2.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img5.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img6.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img7.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img8.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img9.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img10.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img11.jpg" as="image" />
+
+    <!-- LOGOS -->
+    <link rel="preload" href="./Assets/Logo/LogoAgenda.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoAmmarhesWrite.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoCasa.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoSaude10.png" as="image" />
+</head>
+
+<body>
+    <header>
+        <nav class="navContainer">
+            <div class="navLogoDiv">
+                <a href="/">
+                    <img id="teste" src="./Assets//Logo/LogoAgenda.png" alt="Logo Agenda Técnica" class="navLogo">
+                </a>
+            </div>
+            <!-- MENU MOBILE -->
+            <ul class="navItensContainerMobile">
+                <li onclick=hideSidebar()>
+                    <a href="#">
+                        <img src="./Assets/IMGS/closeIconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="/">Início</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#aboutUsSection">Sobre</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="formsOrcamento/forms.html">Orçamento</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#gridDocsSection"> Serviços</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#formsContato" id="navContactButtonMobile">Contato</a>
+                </li>
+            </ul>
+
+            <!-- MENU DESKTOP -->
+            <ul class="navItensContainerDesktop">
+                <li>
+                    <a href="/" class="hideOnMobile">Início</a>
+                </li>
+                <li>
+                    <a href="#aboutUsSection" class="hideOnMobile">Sobre</a>
+                </li>
+                <li>
+                    <a href="formsOrcamento/forms.html" class="hideOnMobile">Orçamento</a>
+                </li>
+                <li>
+                    <a href="#gridDcosSection" class="hideOnMobile">Serviços</a>
+                </li>
+                <li>
+                    <a href="#formsContato" class="hideOnMobile" id="navContactButton">Contato</a>
+                </li>
+                <div class="socialMidiasContainer">
+                    <a class="socialMidiaIcon" href="https://www.facebook.com/Agenda-T%C3%A9cnica-100669640753272/"
+                        target="_blank"><i class="bi bi-facebook"></i></a>
+                    </a>
+                    <a class="socialMidiaIcon" href="https://www.linkedin.com/company/ammarhes-consultoria/"
+                        target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+                <div class="callNavContainer">
+                    <span class="callNavNumbers">
+                        (21) 3549-1640 / 2262-9752
+                    </span>
+                    <span class="callNavText">
+                        <i class="bi bi-telephone fill"></i>Contato telefônico
+                    </span>
+                </div>
+                <li onclick=showSidebar() class="menuCloseButtonMobile">
+                    <a href="#">
+                        <img src="./Assets/IMGS/IconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- BANNER HOME -->
+        <section class="homeImage">
+            <div class="homeImageContainer" id="homeImageContainerID"></div>
+        </section>
+
+        <!-- SECTION COMPANIES -->
+        <section class="companies">
+            <div class="companiesDiv">
+                <h3>Conheça nossas empresas</h3>
+                <div class="companiesLogosDiv" id="companiesLogosDiv"></div>
+            </div>
+        </section>
+
+        <!-- SECTION ABOUT -->
+        <section class="sectionAboutBanner" id="aboutUsSection">
+            <div class="swiffy-slider" id="bannerSlideAbout">
+                <ul class="slider-container" id="sliderAbout">
+                </ul>
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DOCS -->
+        <section class="gridDocumentos" id="gridDcosSection">
+            <h3 class="gridDocumentosh3">Documentos legais de Segurança do Trabalho</h3>
+            <p class="gridDocumentosp">A tecnologia da nossa plataforma garante integração com o eSocial com emissão de
+                documentos dentro do
+                seu ambiente. Alguns dos nossos documentos: </p>
+            <div id="gridDocsContainer">
+            </div>
+        </section>
+
+        <!-- SECTION RECURSOS -->
+        <section class="gridRecursos">
+            <div id="gridRecursosContainer">
+            </div>
+        </section>
+
+        <!-- SECTION SLIDER2 -->
+        <section class="sectionBanner" id="Section">
+            <div class="swiffy-slider" id="bannerSlide">
+                <ul class="slider-container" id="slider">
+                </ul>
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PLATAFORMA -->
+        <section class="gridsPlataforma">
+            <h3 class="gridsPlataformah3">A plataforma ainda conta com outros recursos!
+            </h3>
+            <p class="gridsPlataformap">Além do mencionado acima, contamos com mais funcionalidades. Entre em contato
+                conosco
+                para conhecer todo o potencial da plataforma. </p>
+            <div id="gridsPlataformaContainer">
+            </div>
+        </section>
+
+        <!-- SECTION FORMS -->
+        <section id="formsContato">
+            <div class="formText">
+                <h2 class="formTextTilte">Fale conosco</h2>
+                <p class="formTextParagraph">Alguma dúvida? Nos envie uma mensagem!</p>
+            </div>
+            <div class="formContainer">
+                <form id="contactForm">
+                    <div class="formField">
+                        <label for="nome">Nome<span class="spanRequired">*</span> :</label><br>
+                        <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
+                    </div>
+                    <div class="formField">
+
+                        <label for="email">Email<span class="spanRequired">*</span> :</label><br>
+                        <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
+                    </div>
+
+                    <div class="formField">
+
+                        <label for="assunto">Assunto<span class="spanRequired">*</span> :</label><br>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
+                    </div>
+
+                    <div class="formField">
+                        <label for="mensagem">Mensagem<span class="spanRequired">*</span> :</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="4" required
+                            placeholder="Digite sua mensagem"></textarea><br>
+                    </div>
+
+                    <div class="buttonSubmitFormsDIV">
+
+                        <div id="recaptchaContainer" class="g-recaptcha"
+                            data-sitekey="6Lct3LwpAAAAAD28yaJAJP2vclCnfUHG1Rk4RLve" data-callback="handleRecaptcha">
+                        </div>
+                        <button id="submitButton" class="buttonSubmitForms disabled" disabled
+                            type="submit" onclick="send()">Enviar</button>
+                    </div>
+                </form>
+                <div id="alertForm">
+                    <p id="alertMessage"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content"><img src="./Assets/Logo/LogoAgenda.png" alt="Logo Agenda Tecnica">
+                <p>Agenda Técnica Sistemas de Segurança e Saúde do Trabalhador
+                    <br><br>CNPJ: 10.642.576/0001-06
+                </p>
+            </div>
+            <div class="footer-content1">
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552135491640">+55 (21) 3549-1640</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552120260011">+55 (21) 2026-0011</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552122629752">+55 (21) 2262-9752</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M460.6 147.3L353 256.9c-.8.8-.8 2 0 2.8l75.3 80.2c5.1 5.1 5.1 13.3 0 18.4-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8l-75-79.9c-.8-.8-2.1-.8-2.9 0L313.7 297c-15.3 15.5-35.6 24.1-57.4 24.2-22.1.1-43.1-9.2-58.6-24.9l-17.6-17.9c-.8-.8-2.1-.8-2.9 0l-75 79.9c-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8c-5.1-5.1-5.1-13.3 0-18.4l75.3-80.2c.7-.8.7-2 0-2.8L51.4 147.3c-1.3-1.3-3.4-.4-3.4 1.4V368c0 17.6 14.4 32 32 32h352c17.6 0 32-14.4 32-32V148.7c0-1.8-2.2-2.6-3.4-1.4z">
+                        </path>
+                        <path
+                            d="M256 295.1c14.8 0 28.7-5.8 39.1-16.4L452 119c-5.5-4.4-12.3-7-19.8-7H79.9c-7.5 0-14.4 2.6-19.8 7L217 278.7c10.3 10.5 24.2 16.4 39 16.4z">
+                        </path>
+                    </svg><a href="mailto:comercial@ammarhes.com.br">Comercial:<span class="span-footer">
+                            comercial@ammarhes.com.br</span></a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom-footer">
+            <div class="socialMedias"><a href="https://www.facebook.com/AgendatecnicaSST"
+                    aria-label="https://www.facebook.com/AgendatecnicaSST" target="_blank"><svg stroke="currentColor"
+                        fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+                        </path>
+                    </svg></a><a href="https://www.linkedin.com/company/ammarhes-consultoria/"
+                    aria-label="https://www.linkedin.com/company/ammarhes-consultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                        </path>
+                    </svg></a><a href="https://www.instagram.com/ammarhesconsultoria/"
+                    aria-label="https://www.instagram.com/ammarhesconsultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                        </path>
+                    </svg></a></div>© 2024 Copyright:<p>Agenda Técnica</p>
+        </div>
+    </footer>
+    <a href="#" id="topBtn" class="top"></a>
+</body>
+
+<!-- JS -->
+<script src="home.js"></script>
+
+<!-- SLIDER JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+    defer></script>
+<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</html>

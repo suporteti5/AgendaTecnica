@@ -1,0 +1,860 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* WPP BUTTON */
+#robbu-whatsapp-button {
+    z-index: 1;
+}
+
+/* SCROLL BUTTON */
+
+.top {
+    --offset: 50px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+    width: 45px;
+    aspect-ratio: 1;
+    background: #EFB225;
+    ;
+    border-radius: 10px;
+}
+
+.top.active {
+    visibility: visible;
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #FFFFFF;
+    border-right: 5px solid #FFFFFF;
+}
+
+/* NAV */
+
+.navContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navLogo {
+    width: 150px;
+}
+
+.navItensContainerDesktop {
+    display: flex;
+    align-items: center;
+}
+
+.navItem, .hideOnMobile, .showOnMobile {
+    font-size: 15px;
+    padding: 13px 14px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    color: #052C52;
+    transition: 0.5s ease-out;
+}
+
+#navContactButton {
+    background: #EFB225;
+    ;
+    border-radius: 5px;
+    color: #052C52;
+}
+
+#navContactButton:hover {
+    background-color: #052C52;
+    color: #EFB225;
+    ;
+}
+
+.hideOnMobile, .showOnMobile {
+    border: none;
+    background: none;
+}
+
+.navItem:hover, .hideOnMobile:hover, .socialMidiaIcon:hover, .showOnMobile:hover {
+    color: #EFB225;
+    ;
+    background-color: #052C52;
+    border-radius: 5px;
+    border: none;
+}
+
+.socialMidiaIcon {
+    padding: 11px;
+    color: #EFB225;
+    ;
+}
+
+.callNavContainer {
+    padding: 1% 25px;
+    background: #052C52;
+    margin: 0 0 0 25px;
+}
+
+.callNavNumbers, .callNavText {
+    font-size: 11px;
+    color: #EFB225;
+    ;
+    display: block;
+    margin: 10px 0;
+}
+
+.callNavText {
+    font-size: 13px;
+}
+
+.callNavText i {
+    margin: 0 5px 0 0;
+}
+
+/* MOBILE */
+
+nav ul {
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.navItensContainerMobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px;
+}
+
+.navItensContainerMobile li {
+    width: 100%;
+}
+
+.navItensContainerMobile a {
+    text-decoration: none;
+    color: #052C52;
+}
+
+.menuCloseButtonMobile {
+    display: none;
+}
+
+/* BANNER */
+
+.homeImageContainer {
+    width: 100%;
+    background-color: #000000;
+    background-image: url(./Assets/Banners/BannerImageHome.jpg);
+    display: flex;
+    background-size: cover;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+}
+
+.homeImageText {
+    width: 50%;
+    padding: 50px 0;
+}
+
+.homeImageText h1 {
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.homeImageText p {
+    color: #FFFFFF;
+    margin: 25px 0;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.homeImageText a {
+    background-color: #052C52;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.homeImageTextLinks {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.homeImageTextLinks i {
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+#homeImageTextButtonResource {
+    background-color: #EFB225;
+    ;
+}
+
+.homeImageText a:hover {
+    background-color: #EFB225;
+    ;
+    color: #FFFFFF;
+}
+
+#homeImageTextButtonResource:hover {
+    color: #EFB225;
+    ;
+    background-color: #052C52;
+}
+
+/* FORMHOME */
+
+
+.formHomeImage {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.formHomeImage h2 {
+    text-align: center;
+    margin: 0px 0 35px 0;
+    color: #052C52;
+    font-weight: 500;
+}
+
+.homeImageForms {
+    display: flex;
+    justify-content: center;
+}
+
+.formInputs input {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px #6F7274;
+}
+
+.homeImageFormsSubmit {
+    cursor: pointer;
+    background-color: #052C52;
+    border: none;
+    color: #FFFFFF;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.homeImageFormsSubmit:hover {
+    background-color: #EFB225;
+    ;
+}
+
+.g-recaptcha {
+    margin-bottom: 20px;
+}
+
+/* SECTION COMPANIES */
+
+.companiesDiv {
+    background: #052C52;
+    padding: 50px;
+}
+
+.companiesDiv h3 {
+    text-align: center;
+    font-size: 33px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.companiesLogosDiv {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.logosLink {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.CompaniesLogosImgs {
+    height: 75px;
+    width: 200px;
+}
+
+#saude10 {
+    width: 150px;
+}
+
+.LinksButtons {
+    border-bottom: 1px solid #052C52;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.LinksButtons:hover {
+    border-bottom: solid 1px #FFFFFF;
+}
+
+/* SECTION ABOUT */
+
+.sectionAboutBanner, .sectionBanner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+}
+
+
+.sliderListImageAbout, .sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: fade 1s;
+}
+
+.backgroundSliderAbout, .background {
+    background-image: linear-gradient(to right, white 45%, rgba(255, 255, 255, 0) 65%);
+    background-repeat: repeat-x;
+    height: 100%;
+}
+
+.backgroundContentSliderAbout, .backgroundContent {
+    padding: 85px 70px;
+}
+
+.sliderTitleAbout, .sliderTitle {
+    color: #052C52;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.sliderParagraphAbout, .sliderParagraph {
+    width: 45%;
+    color: #6F7274;
+    font-size: 17px;
+}
+
+#quemSomos {
+    background-image: url('./Assets/Banners/img11.jpg');
+}
+
+#nossaHistoria {
+    background-image: url('./Assets/Banners/img10.jpg');
+}
+
+#nossoDiferencial {
+    background-image: url('./Assets/Banners/img7.jpg');
+}
+
+#nossaProposta {
+    background-image: url('./Assets/Banners/img8.jpg');
+}
+
+#vejaMais {
+    background-image: url('./Assets/Banners/img9.jpg');
+}
+
+#imgEPI {
+    background-image: url('./Assets/Banners/img5.jpg');
+}
+
+#imgRiscos {
+    background-image: url('./Assets/Banners/img6.jpg');
+}
+
+#imgRelatorio {
+    background-image: url('./Assets/Banners/img7.jpg');
+}
+
+.slider-indicators>* {
+    background-color: #052C52 !important;
+}
+
+.ulSliderData {
+    padding: 0 40px;
+}
+
+
+/* SECTION RECURSOS */
+
+#gridRecursosContainer {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gridRecursosItem {
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+.gridRecursosItem a {
+    text-decoration: none;
+}
+
+.gridRecursosTitle {
+    border-bottom: solid 1px #EFB225;
+    ;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.gridRecursosTitle span {
+    background: #EFB225;
+    ;
+    color: #FFFFFF;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.gridRecursosTitle h3 {
+    color: #052C52;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.gridRecursosSubTitle {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #052C52;
+}
+
+.gridRecursosContentText {
+    width: 100%;
+    margin: 10px 0;
+    line-height: 25px;
+    color: #6F7274;
+    font-size: 15px;
+}
+
+.gridRecursosItem:hover {
+    background: #052C52;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+.gridRecursosItem:hover h3 {
+    color: #FFFFFF;
+}
+
+.gridRecursosItem:hover p {
+    color: #FFFFFF;
+}
+
+.gridRecursosItem:hover .gridRecursosSubTitle {
+    color: #EFB225;
+    ;
+}
+
+/* SECTION DOCS  */
+
+.gridDocumentos, .gridsPlataforma {
+    background-color: #052C52;
+}
+
+.gridDocumentosh3, .gridsPlataformah3 {
+    padding: 90px 0 20px 0;
+    text-align: center;
+    font-size: 33px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.gridDocumentosp, .gridsPlataformap {
+    color: rgba(255, 255, 255, 0.90);
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+
+#gridDocsContainer, #gridsPlataformaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+#gridDocsContainer, #gridsPlataformaContainer {
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 15px;
+}
+
+.gridDocsItem, .gridsPlataformaItem {
+    width: 25%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.gridDocsItem span, .gridsPlataformaItem span {
+    font-size: 40px;
+    color: #EFB225;
+    ;
+    margin: 10px 0;
+}
+
+.gridDocsItemTitle, .gridsPlataformaItemTitle {
+    margin: 5px;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.gridDocsItemParagraph, .gridsPlataformaParagraph {
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 14px;
+}
+
+/* SECTION FORMS */
+
+.formContainer {
+    margin: 20px auto;
+    width: 50%;
+}
+
+.formText {
+    padding: 50px;
+    text-align: center;
+}
+
+.formTextTilte {
+    color: #052C52;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.formTextParagraph {
+    color: #6F7274;
+    line-height: 2;
+}
+
+
+.formField label {
+    font-size: 18px;
+    color: #052C52;
+}
+
+.formField input, .formField textarea {
+    margin: 10px 0 25px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #052C52;
+    border: 1px solid #6F7274;
+    font-size: 14px;
+}
+
+#alertForm {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: flex;
+    padding: 10px 16px;
+}
+
+#alertMessage {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#alertMessageImage {
+    width: 30px;
+}
+
+.buttonSubmitFormsDIV {
+    padding: 0 0 30px;
+}
+
+.buttonSubmitForms {
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 13px;
+    background: #EFB225;
+    ;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+#agenda {
+    width: 100%;
+    height: 100px;
+}
+
+.spanRequired {
+    color: red;
+}
+
+.g-recaptcha {
+    margin: 10px 0;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+/* FOOTER */
+
+footer {
+    background: #052C52;
+    padding: 25px;
+}
+
+.footer-container {
+    align-items: center;
+    color: #FFFFFF;
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-content img {
+    width: 250px;
+}
+
+.footer-content p {
+    margin: 10px;
+    width: 50%;
+}
+
+.footer-content1 p {
+    margin: 3px;
+}
+
+.bottom-footer {
+    color: #FFFFFF;
+    margin: 20px;
+    text-align: center;
+}
+
+.socialMedias {
+    display: flex;
+    font-size: 30px;
+    gap: 50px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.bottom-footer a, .span-footer, .footer-content1 a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.span-footer:hover, .footer-content1 a:hover {
+    border-bottom: solid 1px #FFFFFF;
+}
+
+.footer-content1 a {
+    margin: 10px;
+}
+
+@media (max-width: 1050px) {
+
+    /* NAV */
+
+    .navContainer {
+        justify-content: space-between;
+    }
+
+    .hideOnMobile, .callNavContainer {
+        display: none;
+    }
+
+    .menuCloseButtonMobile {
+        margin-left: 20px;
+    }
+
+    .menuCloseButtonMobile {
+        display: block;
+    }
+
+    /* FORM BANNER */
+
+    .homeImageContainer {
+        flex-direction: column;
+    }
+
+    .homeImageText, .homeImageForms {
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    /* SECTION COMPANIES */
+
+    .companiesLogosDiv {
+        gap: 40px;
+    }
+
+    /* SECTION RECURSOS */
+
+    .gridRecursosItem {
+        width: 40%;
+    }
+
+    /* SECTION DOCS / SECTION PLATAFORMA */
+
+    .gridDocsItem, .gridsPlataformaItem {
+        width: 35%;
+    }
+
+}
+
+@media (max-width:900px) {
+
+    /* FOOTER */
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-content p {
+        width: 100%;
+    }
+
+    .footer-content1 {
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    /* SECTION RECURSOS */
+    .gridRecursosItem {
+        width: 80%;
+    }
+
+    /* SECTION DOCS / SECTION PLATAFORMA */
+
+    .gridDocsItem, .gridsPlataformaItem {
+        width: 40%;
+    }
+
+    /* SECTION FORM */
+
+    .formContainer {
+        gap: 30px;
+    }
+
+    .formField input, .formField textarea {
+        margin: 10px 0 20px;
+    }
+
+    .formField textarea {
+        width: 300px;
+    }
+
+    /* FOOTER  */
+
+    .footerContainer {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .footerContainer .infos {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* BANNER HOME  */
+    .homeImageContainer {
+        padding: 0 10px;
+    }
+
+    /* SECTION RECURSOS */
+
+    #gridRecursosContainer {
+        padding: 0;
+    }
+
+    /* SECTION DOCS / SECTION PLATAFORMA */
+
+    .gridDocumentosp, .gridsPlataformap {
+        width: 100%;
+    }
+
+    .gridDocsItem, .gridsPlataformaItem {
+        width: 50%;
+    }
+}
+
+@media (max-width:500px) {
+
+    /* SECTION ABOUT */
+    .backgroundContentSliderAbout, .backgroundContent {
+        padding: 85px 15px;
+    }
+}
